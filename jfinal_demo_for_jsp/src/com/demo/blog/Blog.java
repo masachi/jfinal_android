@@ -1,6 +1,7 @@
 package com.demo.blog;
 
 import java.util.List;
+
 import com.jfinal.plugin.activerecord.Model;
 
 /**
