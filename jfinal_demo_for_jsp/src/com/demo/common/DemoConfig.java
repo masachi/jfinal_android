@@ -2,6 +2,7 @@ package com.demo.common;
 
 import com.demo.test.TestController;
 import com.demo.user.LoginController;
+import com.demo.user.RegistController;
 import com.demo.user.User;
 import com.jfinal.config.Constants;
 import com.jfinal.config.Handlers;
@@ -35,6 +36,7 @@ public class DemoConfig extends JFinalConfig {
 		me.add("/test", TestController.class);
 //		me.add("/regist", LoginController.class);
 		me.add("/login",LoginController.class);
+		me.add("/regist",RegistController.class);
 	}
 	
 	/**

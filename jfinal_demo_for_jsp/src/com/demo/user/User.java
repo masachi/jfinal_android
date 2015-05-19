@@ -28,4 +28,28 @@ public class User extends Model<User> {
 		}
 		return flag;
 	}
+	
+	public String registUser(String userName, String password, String realName){
+		String sql = "SELECT * FROM user WHERE username=?";
+		User result = user.findFirst(sql,userName);
+		String msg = "";
+		if(result == null){
+			//可以注册
+			User save_user = new User();
+			save_user.set("username", userName);
+			save_user.set("password", password);
+			save_user.set("role",1);	//默认是乘客
+			save_user.set("realname", realName);
+			boolean flag = save_user.save();
+			if(flag) {
+				msg = "注册成功！";
+			}else {
+				msg = "网络异常，稍后重试！";
+			}
+		}else {
+			msg = "该用户名已被注册！";
+		}
+		
+		return msg;
+	}
 }
