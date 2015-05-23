@@ -8,8 +8,8 @@ import com.jfinal.core.Controller;
 public class LoginController extends Controller {
 	
 	public void index(){
-		String username = getPara(0);
-		String password = getPara(1);
+		String username = getPara("param0");
+		String password = getPara("param1");
 		
 		int result = User.user.loginCheck(username, password);
 		Map<String,Integer> map = new HashMap<String,Integer>();
